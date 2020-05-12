@@ -29,4 +29,5 @@ routes.get("/incidents/list", incidentController.listarCasos);
 routes.get("/incident", incidentController.recuperarCaso);
 routes.delete("/incident/delete/:idCaso",incidentController.delete)
 
+
 module.exports = routes;
