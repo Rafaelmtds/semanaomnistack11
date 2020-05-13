@@ -49,9 +49,10 @@ module.exports = {
   async delete(req, res) {
     const idOng = req.headers.authorization;
     const { idCaso } = req.params;
+    
     const caso = await connection("incidents").select("*").where("id", idCaso);
-
-    if (caso[0].ong_id === idOng) {
+    
+    if (caso[0].ong_id == idOng) {
       await connection("incidents").where("id", idCaso).del();
       return res.status(204).send();
     } else {

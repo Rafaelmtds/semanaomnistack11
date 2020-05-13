@@ -14,11 +14,12 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: 'us-cdbr-east-06.cleardb.net',
+      database: 'heroku_73c9ddbc9faf64b',
+      user:     'b4c943f50d92af',
+      password: 'bf3d32e6'
     },
     pool: {
       min: 2,

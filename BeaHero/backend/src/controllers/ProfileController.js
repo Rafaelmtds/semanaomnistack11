@@ -6,7 +6,9 @@ module.exports = {
     const casos = await connection("incidents")
       .select("*")
       .where("ong_id", ong_id);
-
+      console.log(casos);
     return res.json(casos);
+    
+    
   },
 };

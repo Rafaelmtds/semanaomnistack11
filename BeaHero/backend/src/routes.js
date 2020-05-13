@@ -6,28 +6,23 @@ const sessionController = require('./controllers/SessionController');
 
 const routes = express.Router();
 
-routes.get("/", (req, res) => {
-  const params = req.query;
-  console.log(params);
 
-  res.send("Hello World");
-});
 
 //ONGs
-routes.post("/ongs", ongController.create);
-routes.get("/ongs", ongController.listagem);
+routes.post("/api/ongs", ongController.create);
+routes.get("/api/ongs", ongController.listagem);
 
 //login
-routes.post('/sessions', sessionController.create)
+routes.post('/api/sessions', sessionController.create)
 
 //Profile
-routes.get('/profile', profileController.index);
+routes.get('/api/profile', profileController.index);
 
 //Casos
-routes.post("/incident", incidentController.create);
-routes.get("/incidents/list", incidentController.listarCasos);
-routes.get("/incident", incidentController.recuperarCaso);
-routes.delete("/incident/delete/:idCaso",incidentController.delete)
+routes.post("/api/incident", incidentController.create);
+routes.get("/api/incidents/list", incidentController.listarCasos);
+routes.get("/api/incident", incidentController.recuperarCaso);
+routes.delete("/api/incident/delete/:idCaso",incidentController.delete)
 
 
 module.exports = routes;
